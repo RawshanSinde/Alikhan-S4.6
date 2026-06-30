@@ -56,6 +56,7 @@ import {ChatMessageMessage, ClientReadyMessage, ClientSaveRevisionMessage, Clien
 import {Builder} from "../../static/js/Builder";
 const webaccess = require('../hooks/express/webaccess');
 const { checkValidRev } = require('../utils/checkValidRev');
+import {SYSTEM_AUTHOR_ID, isValidHexColor, safeDecodeURIComponent} from '../improvements';
 
 let rateLimiter:any;
 let socketio: any = null;
@@ -430,17 +431,9 @@ exports.handleMessage = async (socket:any, message: ClientVarMessage) => {
           (c) => c.split('=')[0] === name);
       if (!match) return null;
       const raw = match.split('=').slice(1).join('=');
-      // A malformed value (e.g. `name=%ZZ`) makes decodeURIComponent throw
-      // URIError. Without this guard a single bad cookie aborts CLIENT_READY,
-      // letting an unauthenticated peer spam server error logs and block
-      // itself from joining (flagged by Qodo on #7755). Treat undecodable
-      // values as absent.
-      try {
-        return decodeURIComponent(raw);
-      } catch (err) {
-        if (err instanceof URIError) return null;
-        throw err;
-      }
+      // safeDecodeURIComponent handles URIError for malformed percent-encoded
+      // values (e.g. `name=%ZZ`) -- see src/node/improvements/sanitizers.ts.
+      return safeDecodeURIComponent(raw);
     };
     const cookieToken = readCookie(`${cookiePrefix}token`);
     const legacyToken = typeof message.token === 'string' ? message.token : null;
@@ -779,7 +772,7 @@ const handleUserInfoUpdate = async (socket:any, {data: {userInfo: {name, colorId
   const session = sessioninfos[socket.id];
   if (!session || !session.author || !session.padId) throw new Error('session not ready');
   const author = session.author;
-  if (!/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(colorId)) {
+  if (!isValidHexColor(colorId)) {
     throw new Error(`malformed color: ${colorId}`);
   }
 
@@ -917,8 +910,8 @@ const handleUserChanges = async (socket:any, message: {
       // A `const {Pad} = require('../db/Pad')` at module scope returned
       // a partially-initialized class here (circular load via padManager),
       // so the static-field access ended up undefined and short-circuited
-      // the check at runtime. Inline literal is the simplest fix.
-      if (opAuthorId === 'a.etherpad-system') {
+      // the check at runtime. Now imported from improvements/constants.ts.
+      if (opAuthorId === SYSTEM_AUTHOR_ID) {
         throw new Error(`Author ${thisSession.author} attempted to submit changes as the ` +
                         `reserved system author ${opAuthorId} in changeset ${changeset}`);
       }
