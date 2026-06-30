@@ -25,9 +25,8 @@ import ChatMessage from '../../static/js/ChatMessage';
 import {Builder} from "../../static/js/Builder";
 import {Attribute} from "../../static/js/types/Attribute";
 
-// Mirror of `Pad.SYSTEM_AUTHOR_ID`. Inlined to avoid a circular load
-// (API <-> Pad) at module init time.
-const SYSTEM_AUTHOR_ID = 'a.etherpad-system';
+// Shared constant -- see src/node/improvements/constants.ts for rationale.
+import {SYSTEM_AUTHOR_ID} from '../improvements/constants';
 import settings from '../utils/Settings';
 const CustomError = require('../utils/customError');
 const padManager = require('./PadManager');
