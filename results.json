@@ -1,0 +1,1498 @@
+                     
+                     
+┌───────────────────┐
+│ 289 Code Findings │
+└───────────────────┘
+                                         
+  [36m[22m[24m  .github/dependabot.yml[0m
+    ❯❱ [1mpackage_managers.dependabot.dependabot-missing-cooldown.dependabot-missing-cooldown[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          This Dependabot configuration does not set a cooldown period. Newly published    
+          packages can be malicious or unstable. Add a `cooldown` block with `default-days:
+          7` to each `package-ecosystem` entry under `updates` to wait 7 days before       
+          proposing updates to newly published package versions. Reference:                
+          https://docs.github.com/en/code-security/dependabot/dependabot-version-          
+          updates/configuration-options-for-the-dependabot.yml-file#cooldown               
+          Details: https://sg.run/5WvGK                                                    
+                                                                                           
+            4┆ - package-ecosystem: "github-actions"
+            5┆   directory: "/"
+            6┆   schedule:
+            7┆     interval: "daily"
+            ⋮┆----------------------------------------
+            8┆ - package-ecosystem: "docker"
+            9┆   directory: "/"
+           10┆   schedule:
+           11┆     interval: "daily"
+            ⋮┆----------------------------------------
+           12┆ - package-ecosystem: "npm"
+           13┆   directory: "/"
+           14┆   schedule:
+           15┆     interval: "daily"
+           16┆   versioning-strategy: "increase"
+           17┆   open-pull-requests-limit: 30
+           18┆   groups:
+           19┆     dev-dependencies:
+           20┆       dependency-type: "development"
+                                                      
+  [36m[22m[24m  .github/workflows/backend-tests.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           35┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           36┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           43┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+           48┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+           54┆ uses: awalsh128/cache-apt-pkgs-action@v1.6.1
+            ⋮┆----------------------------------------
+           91┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           92┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           99┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+          104┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+          110┆ uses: awalsh128/cache-apt-pkgs-action@v1.6.1
+            ⋮┆----------------------------------------
+          171┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+          172┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+          179┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+          184┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+          237┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+          238┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+          245┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+          250┆ uses: actions/setup-node@v6
+                                                              
+  [36m[22m[24m  .github/workflows/build-and-deploy-docs.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           39┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           40┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           47┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           54┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+           61┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+           67┆ uses: actions/configure-pages@v6
+            ⋮┆----------------------------------------
+           78┆ uses: actions/upload-pages-artifact@v5
+            ⋮┆----------------------------------------
+           96┆ uses: actions/deploy-pages@v5
+                                                        
+  [36m[22m[24m  .github/workflows/codeql-analysis.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           28┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           40┆ uses: github/codeql-action/init@v4
+            ⋮┆----------------------------------------
+           43┆ uses: github/codeql-action/autobuild@v4
+            ⋮┆----------------------------------------
+           46┆ uses: github/codeql-action/analyze@v4
+                                                    
+  [36m[22m[24m  .github/workflows/deb-package.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           65┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           69┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+           72┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+          289┆ uses: actions/upload-artifact@v7
+            ⋮┆----------------------------------------
+          303┆ - uses: actions/download-artifact@v8
+            ⋮┆----------------------------------------
+          322┆ uses: softprops/action-gh-release@v3
+            ⋮┆----------------------------------------
+          349┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+          380┆ - uses: actions/download-artifact@v8
+                                                          
+  [36m[22m[24m  .github/workflows/dependency-review.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           18┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           20┆ uses: actions/dependency-review-action@v5
+                                               
+  [36m[22m[24m  .github/workflows/docker.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           29┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           34┆ uses: docker/setup-buildx-action@v4
+            ⋮┆----------------------------------------
+           37┆ uses: docker/build-push-action@v7
+            ⋮┆----------------------------------------
+           45┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           52┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+           60┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+          193┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+          198┆ uses: docker/setup-buildx-action@v4
+            ⋮┆----------------------------------------
+          216┆ uses: docker/build-push-action@v7
+            ⋮┆----------------------------------------
+          264┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+          269┆ uses: docker/setup-buildx-action@v4
+            ⋮┆----------------------------------------
+          272┆ uses: docker/build-push-action@v7
+            ⋮┆----------------------------------------
+          361┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+          366┆ uses: docker/setup-qemu-action@v4
+            ⋮┆----------------------------------------
+          369┆ uses: docker/setup-buildx-action@v4
+            ⋮┆----------------------------------------
+          373┆ uses: docker/metadata-action@v6
+            ⋮┆----------------------------------------
+          385┆ uses: docker/login-action@v4
+            ⋮┆----------------------------------------
+          391┆ uses: docker/login-action@v4
+            ⋮┆----------------------------------------
+          399┆ uses: docker/build-push-action@v7
+            ⋮┆----------------------------------------
+          409┆ uses: peter-evans/dockerhub-description@v5
+            ⋮┆----------------------------------------
+          419┆ uses: actions/checkout@v7
+                                                         
+  [36m[22m[24m  .github/workflows/downstream-smoke.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           29┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           31┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           39┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+           45┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+           94┆ uses: dtolnay/rust-toolchain@stable
+                                                             
+  [36m[22m[24m  .github/workflows/frontend-admin-tests.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           30┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           31┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           38┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+           43┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+           51┆ uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           92┆ uses: actions/upload-artifact@v7
+            ⋮┆----------------------------------------
+           98┆ - uses: actions/upload-artifact@v7
+                                                       
+  [36m[22m[24m  .github/workflows/frontend-tests.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           23┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           24┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           31┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           38┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+           43┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+           76┆ uses: actions/upload-artifact@v7
+            ⋮┆----------------------------------------
+           82┆ - uses: actions/upload-artifact@v7
+            ⋮┆----------------------------------------
+           95┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           96┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+          103┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+          110┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+          115┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+          146┆ uses: actions/upload-artifact@v7
+            ⋮┆----------------------------------------
+          152┆ - uses: actions/upload-artifact@v7
+            ⋮┆----------------------------------------
+          171┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+          172┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+          179┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+          186┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+          191┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+          252┆ uses: actions/upload-artifact@v7
+            ⋮┆----------------------------------------
+          258┆ - uses: actions/upload-artifact@v7
+            ⋮┆----------------------------------------
+          272┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+          273┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+          280┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+          287┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+          292┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+          341┆ uses: actions/upload-artifact@v7
+            ⋮┆----------------------------------------
+          347┆ - uses: actions/upload-artifact@v7
+                                                      
+  [36m[22m[24m  .github/workflows/handleRelease.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           30┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           31┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           38┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+           43┆ uses: actions/setup-node@v6
+   
+   ❯❯❱ [1myaml.github-actions.security.run-shell-injection.run-shell-injection[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Using variable interpolation `${{...}}` with `github` context data in a `run:`   
+          step could allow an attacker to inject their own code into the runner. This would
+          allow them to steal secrets and code. `github` context data can have arbitrary   
+          user input and should be treated as untrusted. Instead, use an intermediate      
+          environment variable with `env:` to store the data and use the environment       
+          variable in the `run:` script. Be sure to use double-quotes the environment      
+          variable, like this: "$ENVVAR".                                                  
+          Details: https://sg.run/pkzk                                                     
+                                                                                           
+           57┆ run: pnpm --silent run generateChangelog ${{ github.ref }} > ${{
+               github.workspace }}-CHANGELOG.txt                               
+   
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           59┆ uses: softprops/action-gh-release@v3
+                                                       
+  [36m[22m[24m  .github/workflows/installer-test.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           26┆ - uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           41┆ - uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           43┆ - uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+          117┆ - uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+          119┆ - uses: actions/setup-node@v6
+                                                  
+  [36m[22m[24m  .github/workflows/load-test.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           27┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           28┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           35┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+           40┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+           65┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           66┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           73┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+           78┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+          128┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+          129┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+          136┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+          141┆ uses: actions/setup-node@v6
+                                                           
+  [36m[22m[24m  .github/workflows/perform-type-check.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           27┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           28┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           35┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+           40┆ uses: actions/setup-node@v6
+                                                   
+  [36m[22m[24m  .github/workflows/rate-limit.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           30┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           31┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           38┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+           43┆ uses: actions/setup-node@v6
+                                                
+  [36m[22m[24m  .github/workflows/release.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           25┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           45┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           50┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           57┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+           65┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+           81┆ - uses: ruby/setup-ruby@v1
+            ⋮┆----------------------------------------
+           85┆ - uses: reitzig/actions-asciidoctor@v2.0.5
+   
+   ❯❯❱ [1myaml.github-actions.security.run-shell-injection.run-shell-injection[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Using variable interpolation `${{...}}` with `github` context data in a `run:`   
+          step could allow an attacker to inject their own code into the runner. This would
+          allow them to steal secrets and code. `github` context data can have arbitrary   
+          user input and should be treated as untrusted. Instead, use an intermediate      
+          environment variable with `env:` to store the data and use the environment       
+          variable in the `run:` script. Be sure to use double-quotes the environment      
+          variable, like this: "$ENVVAR".                                                  
+          Details: https://sg.run/pkzk                                                     
+                                                                                           
+           90┆ run: |
+           91┆   cd bin
+           92┆   pnpm install
+           93┆   pnpm run release ${{ inputs.release_type }}
+                                                        
+  [36m[22m[24m  .github/workflows/releaseEtherpad.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           48┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           49┆ - uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+           57┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           64┆ - uses: pnpm/action-setup@v6
+                                                   
+  [36m[22m[24m  .github/workflows/snap-build.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           37┆ - uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           46┆ - uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           66┆ uses: actions/upload-artifact@v7
+                                                     
+  [36m[22m[24m  .github/workflows/snap-publish.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           38┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           42┆ uses: snapcore/action-build@v1
+            ⋮┆----------------------------------------
+           45┆ uses: actions/upload-artifact@v7
+            ⋮┆----------------------------------------
+           60┆ uses: actions/download-artifact@v8
+            ⋮┆----------------------------------------
+           65┆ uses: snapcore/action-publish@v1
+            ⋮┆----------------------------------------
+           82┆ uses: actions/download-artifact@v8
+            ⋮┆----------------------------------------
+           87┆ uses: snapcore/action-publish@v1
+                                              
+  [36m[22m[24m  .github/workflows/stale.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           12┆ - uses: actions/stale@v10
+                                                       
+  [36m[22m[24m  .github/workflows/update-plugins.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           19┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           21┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+           27┆ uses: actions/setup-node@v6
+                                                                    
+  [36m[22m[24m  .github/workflows/upgrade-from-latest-release.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           35┆ uses: actions/checkout@v7
+            ⋮┆----------------------------------------
+           41┆ - uses: actions/cache@v6
+            ⋮┆----------------------------------------
+           48┆ - uses: pnpm/action-setup@v6
+            ⋮┆----------------------------------------
+           53┆ uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+           58┆ uses: awalsh128/cache-apt-pkgs-action@v1.6.1
+                         
+  [36m[22m[24m  .npmrc[0m
+    ❯❱ [1mpackage_managers.npm.npm-missing-minimum-release-age.npm-missing-minimum-release-age[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          This .npmrc does not set a minimum release age or sets it too low. Newly        
+          published packages can be malicious or unstable. Add `min-release-age = 7` to   
+          wait 7 days before resolving newly published package versions. Added in: v11.10 
+          Reference: https://github.blog/changelog/2026-02-18-npm-bulk-trusted-publishing-
+          config-and-script-security-now-generally-available/                             
+          Details: https://sg.run/GRo1z                                                   
+                                                                                          
+            1┆ strict-dep-builds=false
+            2┆ # Use hardlinks when populating node_modules instead of clone/copyfile.
+            3┆ # pnpm's default "auto" mode ends up using copy_file_range which fails
+               on                                                                    
+            4┆ # ZFS (https://github.com/pnpm/pnpm/issues/7024) and breaks `docker
+            5┆ # compose build` on hosts with a ZFS root (#7342). Hardlinks are fast,
+            6┆ # save disk, and work on every filesystem Etherpad supports.
+            7┆ package-import-method=hardlink
+                                                   
+  [36m[22m[24m  admin/src/utils/resolveByPath.ts[0m
+    ❯❱ [1mjavascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-[0m
+  [1m     pollution-loop[0m                                                                        
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Possibility of prototype polluting function detected. By adding or modifying     
+          attributes of an object prototype, it is possible to create attributes that exist
+          on every object, or replace critical attributes with malicious ones. This can be 
+          problematic if the software depends on existence or non-existence of certain     
+          attributes, or uses pre-defined attributes of object prototype (such as          
+          hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the
+          object prototype, using an object without prototypes (via Object.create(null) ), 
+          blocking modifications of attributes that resolve to object prototype, using Map 
+          instead of object.                                                               
+          Details: https://sg.run/w1DB                                                     
+                                                                                           
+           11┆ cur = cur[i];
+            ⋮┆----------------------------------------
+           13┆ cur = (cur as Record<string, unknown>)[String(seg)];
+                                             
+  [36m[22m[24m  bin/installLocalPlugins.sh[0m
+    ❯❱ [1mbash.lang.security.ifs-tampering.ifs-tampering[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          The special variable IFS affects how splitting takes place when expanding      
+          unquoted variables. Don't set it globally. Prefer a dedicated utility such as  
+          'cut' or 'awk' if you need to split input data. If you must use 'read', set IFS
+          locally using e.g. 'IFS="," read -a my_array'.                                 
+          Details: https://sg.run/Q9pq                                                   
+                                                                                         
+            3┆ IFS=$'\n\t'
+                                   
+  [36m[22m[24m  bin/make_docs.ts[0m
+    ❯❱ [1mjavascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-[0m
+  [1m     traversal[0m                                                                                   
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected possible user input going into a `path.join` or `path.resolve` function.
+          This could possibly lead to a path traversal vulnerability,  where the attacker  
+          can access arbitrary files stored in the file system. Instead, be sure to        
+          sanitize or validate user input first.                                           
+          Details: https://sg.run/OPqk                                                     
+                                                                                           
+           29┆ if (fs.lstatSync(path.join(<string>from, element)).isFile()) {
+            ⋮┆----------------------------------------
+           29┆ if (fs.lstatSync(path.join(<string>from, element)).isFile()) {
+            ⋮┆----------------------------------------
+           32┆ fs.copyFileSync(path.join(from, element), path.join(to, element))
+            ⋮┆----------------------------------------
+           32┆ fs.copyFileSync(path.join(from, element), path.join(to, element))
+            ⋮┆----------------------------------------
+           32┆ fs.copyFileSync(path.join(from, element), path.join(to, element))
+            ⋮┆----------------------------------------
+           32┆ fs.copyFileSync(path.join(from, element), path.join(to, element))
+            ⋮┆----------------------------------------
+           38┆ copyFolderSync(path.join(from, element), path.join(to, element))
+            ⋮┆----------------------------------------
+           38┆ copyFolderSync(path.join(from, element), path.join(to, element))
+            ⋮┆----------------------------------------
+           38┆ copyFolderSync(path.join(from, element), path.join(to, element))
+            ⋮┆----------------------------------------
+           38┆ copyFolderSync(path.join(from, element), path.join(to, element))
+                                                    
+  [36m[22m[24m  bin/plugins/lib/backend-tests.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           19┆ uses: awalsh128/cache-apt-pkgs-action@v1.6.0
+            ⋮┆----------------------------------------
+           25┆ uses: actions/checkout@v4
+            ⋮┆----------------------------------------
+           29┆ - uses: pnpm/action-setup@v3
+            ⋮┆----------------------------------------
+           38┆ - uses: actions/cache@v4
+            ⋮┆----------------------------------------
+           47┆ uses: actions/checkout@v4
+                                                     
+  [36m[22m[24m  bin/plugins/lib/frontend-tests.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           15┆ uses: actions/checkout@v4
+            ⋮┆----------------------------------------
+           18┆ - uses: pnpm/action-setup@v3
+            ⋮┆----------------------------------------
+           27┆ - uses: actions/cache@v4
+            ⋮┆----------------------------------------
+           36┆ uses: actions/checkout@v4
+                                                 
+  [36m[22m[24m  bin/plugins/lib/npmpublish.yml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-[0m
+  [1m     action-tag[0m                                                                            
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names
+          can be silently repointed by the action owner, enabling supply-chain attacks — as
+          seen in the trivy-action and kics-github-action compromises. Pin the reference to
+          a full 40-character commit SHA instead, e.g. `uses:                              
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                      
+          Details: https://sg.run/2LgAL                                                    
+                                                                                           
+           21┆ - uses: actions/setup-node@v6
+            ⋮┆----------------------------------------
+           31┆ uses: actions/checkout@v6
+            ⋮┆----------------------------------------
+           34┆ - uses: pnpm/action-setup@v5
+            ⋮┆----------------------------------------
+           43┆ - uses: actions/cache@v5
+            ⋮┆----------------------------------------
+           51┆ uses: actions/checkout@v6
+                                                       
+  [36m[22m[24m  bin/plugins/lib/test-and-release.yml[0m
+   ❯❯❱ [1myaml.github-actions.security.secrets-inherit.secrets-inherit[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          This workflow uses `secrets: inherit` to pass all of the calling workflow's      
+          secrets to a reusable workflow. This violates the principle of least privilege   
+          because the called workflow receives access to every secret in the repository,   
+          not just the ones it needs. If the called workflow is compromised or sourced from
+          a third party, an attacker gains access to all repository secrets. Instead,      
+          explicitly pass only the secrets that the called workflow requires using the     
+          `secrets:` map, e.g. `secrets: { MY_SECRET: ${{ secrets.MY_SECRET }} }`.         
+          Details: https://sg.run/X2PZB                                                    
+                                                                                           
+           13┆ secrets: inherit
+            ⋮┆----------------------------------------
+           16┆ secrets: inherit
+            ⋮┆----------------------------------------
+           26┆ secrets: inherit
+                                 
+  [36m[22m[24m  bin/release.ts[0m
+    ❯❱ [1mjavascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          RegExp() called with a `branch` function argument, this might allow an attacker  
+          to cause a Regular Expression Denial-of-Service (ReDoS) within your application  
+          as RegExP blocks the main thread. For this reason, it is recommended to use      
+          hardcoded regexes instead. If your regex is run on user-controlled input,        
+          consider performing input validation or use a regex checking/sanitization library
+          such as https://www.npmjs.com/package/recheck to verify that the regex does not  
+          appear vulnerable to ReDoS.                                                      
+          Details: https://sg.run/gr65                                                     
+                                                                                           
+           91┆ if (!(new RegExp(`^refs/remotes/[^/]+/${branch}`)).test(upstream)) {
+                                                  
+  [36m[22m[24m  bin/setup-trusted-publishers.sh[0m
+    ❯❱ [1mbash.lang.security.ifs-tampering.ifs-tampering[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          The special variable IFS affects how splitting takes place when expanding      
+          unquoted variables. Don't set it globally. Prefer a dedicated utility such as  
+          'cut' or 'awk' if you need to split input data. If you must use 'read', set IFS
+          locally using e.g. 'IFS="," read -a my_array'.                                 
+          Details: https://sg.run/Q9pq                                                   
+                                                                                         
+          154┆ IFS=','
+                                                               
+  [36m[22m[24m  doc/.vitepress/theme/components/SvgImage.vue[0m
+    ❯❱ [1mjavascript.vue.security.audit.xss.templates.avoid-v-html.avoid-v-html[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Dynamically rendering arbitrary HTML on your website can be very dangerous       
+          because it can easily lead to XSS vulnerabilities. Only use HTML interpolation on
+          trusted content and never on user-provided content.                              
+          Details: https://sg.run/0QEw                                                     
+                                                                                           
+            6┆ <figure class="svg-image-root" v-html="svg" />
+                                         
+  [36m[22m[24m  docker-compose.dev.yml[0m
+    ❯❱ [1myaml.docker-compose.security.no-new-privileges.no-new-privileges[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Service 'postgres' allows for privilege escalation via setuid or setgid binaries.
+          Add 'no-new-privileges:true' in 'security_opt' to prevent this.                  
+          Details: https://sg.run/0n8q                                                     
+                                                                                           
+           45┆ postgres:
+   
+    ❯❱ [1myaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Service 'postgres' is running with a writable root filesystem. This may allow
+          malicious applications to download and run additional payloads, or modify    
+          container files. If an application inside a container has to save something  
+          temporarily consider using a tmpfs. Add 'read_only: true' to this service to 
+          prevent this.                                                                
+          Details: https://sg.run/e4JE                                                 
+                                                                                       
+           45┆ postgres:
+                                      
+  [36m[22m[24m  pnpm-workspace.yaml[0m
+    ❯❱ [1mpackage_managers.pnpm.pnpm-block-exotic-sub-dependencies.pnpm-block-exotic-sub-dependencies[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Missing or incorrect blockExoticSubdeps. Set `blockExoticSubdeps: true` to    
+          transitive dependencies from being installed from untrusted sources. Added in:
+          v10.26.0 Reference: https://pnpm.io/settings#blockexoticsubdeps               
+          Details: https://sg.run/RrWRv                                                 
+                                                                                        
+            1┆ packages:
+   
+    ❯❱ [1mpackage_managers.pnpm.pnpm-missing-minimum-release-age.pnpm-minimum-release-age[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          This pnpm workspace configuration does not set a minimum release age. Newly    
+          published packages can be malicious or unstable. Add `minimumReleaseAge: 10080`
+          (minutes) to wait at least seven days before installing newly published package
+          versions. Added in: v10.16.0 Reference:                                        
+          https://pnpm.io/settings#minimumreleaseage                                     
+          Details: https://sg.run/Aj0o0                                                  
+                                                                                         
+            1┆ packages:
+   
+    ❯❱ [1mpackage_managers.pnpm.pnpm-trust-policy.pnpm-trust-policy[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Missing or incorrect trustPolicy. Set `trustPolicy: no-downgrade` to prevent    
+          malicious package updates from downgrading security settings. Added in: v10.21.0
+          Reference: https://pnpm.io/settings#trustpolicy                                 
+          Details: https://sg.run/B2Kz7                                                   
+                                                                                          
+            1┆ packages:
+                                                    
+  [36m[22m[24m  src/node/handler/ExportHandler.ts[0m
+     ❱ [1mjavascript.lang.security.audit.unsafe-formatstring.unsafe-formatstring[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected string concatenation with a non-literal variable in a util.format /     
+          console.log function. If an attacker injects a format specifier in the string, it
+          will forge the log message. Try to use constant values for the format string.    
+          Details: https://sg.run/7Y5R                                                     
+                                                                                           
+          155┆ `native ${type} export failed for pad "${padId}":`,
+                                              
+  [36m[22m[24m  src/node/handler/RestAPI.ts[0m
+    ❯❱ [1mjavascript.express.security.express-data-exfiltration.express-data-exfiltration[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Depending on the context, user control data in `Object.assign` can cause web     
+          response to include data that it should not have or can lead to a mass assignment
+          vulnerability.                                                                   
+          Details: https://sg.run/pkpL                                                     
+                                                                                           
+          1477┆ const fields = Object.assign({}, params, query, formData);
+                                            
+  [36m[22m[24m  src/node/hooks/express.ts[0m
+    ❯❱ [1mproblem-based-packs.insecure-transport.js-node.using-http-server.using-http-server[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Checks for any usage of http servers instead of https servers. Encourages the    
+          usage of https protocol instead of http, which does not have TLS and is therefore
+          unencrypted. Using http can lead to man-in-the-middle attacks in which the       
+          attacker is able to read sensitive information.                                  
+          Details: https://sg.run/x1zL                                                     
+                                                                                           
+          126┆ exports.server = http.createServer(app);
+                                                  
+  [36m[22m[24m  src/node/hooks/express/admin.ts[0m
+    ❯❱ [1mjavascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-[0m
+  [1m     traversal[0m                                                                                   
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected possible user input going into a `path.join` or `path.resolve` function.
+          This could possibly lead to a path traversal vulnerability,  where the attacker  
+          can access arbitrary files stored in the file system. Instead, be sure to        
+          sanitize or validate user input first.                                           
+          Details: https://sg.run/OPqk                                                     
+                                                                                           
+           27┆ let pathname = path.join(ADMIN_PATH, req.url);
+                                                         
+  [36m[22m[24m  src/node/hooks/express/specialpages.ts[0m
+    ❯❱ [1mjavascript.express.security.audit.express-res-sendfile.express-res-sendfile[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          The application processes user-input, this is passed to res.sendFile which can   
+          allow an attacker to arbitrarily read files on the system through path traversal.
+          It is recommended to perform input validation in addition to canonicalizing the  
+          path. This allows you to validate the path against the intended directory it     
+          should be accessing.                                                             
+          Details: https://sg.run/7DJk                                                     
+                                                                                           
+           65┆ return res.sendFile(path.join(settings.root, 'src', 'static',
+               'robots.txt'));                                              
+   
+    ❯❱ [1mjavascript.express.security.audit.xss.direct-response-write.direct-response-write[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected directly writing to a Response object from user-defined input. This
+          bypasses any HTML escaping and may expose your application to a Cross-Site- 
+          scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely
+          escaped HTML.                                                               
+          Details: https://sg.run/vzGl                                                
+                                                                                      
+          218┆ res.send(content);
+            ⋮┆----------------------------------------
+          263┆ res.send(content);
+            ⋮┆----------------------------------------
+          405┆ res.send(content);
+            ⋮┆----------------------------------------
+          432┆ res.send(eejs.require('ep_etherpad-lite/templates/timeslider.html', {
+          433┆   req,
+          434┆   toolbar,
+          435┆   embed: true,
+          436┆   entrypoint: "../../"+fileNameTimeSlider,
+          437┆   settings: settings.getPublicSettings(),
+          438┆   socialMetaHtml,
+          439┆   proxyPath,
+          440┆ }));
+                                         
+  [36m[22m[24m  src/node/hooks/i18n.ts[0m
+    ❯❱ [1mjavascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-[0m
+  [1m     traversal[0m                                                                                   
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected possible user input going into a `path.join` or `path.resolve` function.
+          This could possibly lead to a path traversal vulnerability,  where the attacker  
+          can access arbitrary files stored in the file system. Instead, be sure to        
+          sanitize or validate user input first.                                           
+          Details: https://sg.run/OPqk                                                     
+                                                                                           
+           28┆ file = path.resolve(dir, file);
+            ⋮┆----------------------------------------
+           28┆ file = path.resolve(dir, file);
+                                                      
+  [36m[22m[24m  src/node/security/OAuth2Provider.ts[0m
+    ❯❱ [1mjavascript.express.security.audit.express-res-sendfile.express-res-sendfile[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          The application processes user-input, this is passed to res.sendFile which can   
+          allow an attacker to arbitrarily read files on the system through path traversal.
+          It is recommended to perform input validation in addition to canonicalizing the  
+          path. This allows you to validate the path against the intended directory it     
+          should be accessing.                                                             
+          Details: https://sg.run/7DJk                                                     
+                                                                                           
+          276┆ return res.sendFile(path.join(settings.root,'src','static',
+               'oidc','login.html'));                                     
+                                                  
+  [36m[22m[24m  src/node/utils/AbsolutePaths.ts[0m
+    ❯❱ [1mjavascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-[0m
+  [1m     traversal[0m                                                                                   
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected possible user input going into a `path.join` or `path.resolve` function.
+          This could possibly lead to a path traversal vulnerability,  where the attacker  
+          can access arbitrary files stored in the file system. Instead, be sure to        
+          sanitize or validate user input first.                                           
+          Details: https://sg.run/OPqk                                                     
+                                                                                           
+           46┆ if (fs.existsSync(path.join(dir, 'package.json'))) return dir;
+            ⋮┆----------------------------------------
+          157┆ const rewrittenPath = path.join(findEtherpadRoot(), somePath);
+                                                   
+  [36m[22m[24m  src/node/utils/ImportEtherpad.ts[0m
+    ❯❱ [1mjavascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          RegExp() called with a `srcPadId` function argument, this might allow an attacker
+          to cause a Regular Expression Denial-of-Service (ReDoS) within your application  
+          as RegExP blocks the main thread. For this reason, it is recommended to use      
+          hardcoded regexes instead. If your regex is run on user-controlled input,        
+          consider performing input validation or use a regex checking/sanitization library
+          such as https://www.npmjs.com/package/recheck to verify that the regex does not  
+          appear vulnerable to ReDoS.                                                      
+          Details: https://sg.run/gr65                                                     
+                                                                                           
+          128┆ const revKeyRe = new RegExp(`^pad:${escPadId}:revs:(\\d+)$`);
+                                                
+  [36m[22m[24m  src/node/utils/LibreOffice.ts[0m
+    ❯❱ [1mjavascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-[0m
+  [1m     traversal[0m                                                                                   
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected possible user input going into a `path.join` or `path.resolve` function.
+          This could possibly lead to a path traversal vulnerability,  where the attacker  
+          can access arbitrary files stored in the file system. Instead, be sure to        
+          sanitize or validate user input first.                                           
+          Details: https://sg.run/OPqk                                                     
+                                                                                           
+           76┆ const sourcePath = path.join(tmpDir, sourceFile);
+                                           
+  [36m[22m[24m  src/node/utils/Minify.ts[0m
+    ❯❱ [1mjavascript.express.security.audit.xss.direct-response-write.direct-response-write[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected directly writing to a Response object from user-defined input. This
+          bypasses any HTML escaping and may expose your application to a Cross-Site- 
+          scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely
+          escaped HTML.                                                               
+          Details: https://sg.run/vzGl                                                
+                                                                                      
+          225┆ res.write(content);
+   
+     ❱ [1mjavascript.lang.security.audit.unsafe-formatstring.unsafe-formatstring[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected string concatenation with a non-literal variable in a util.format /     
+          console.log function. If an attacker injects a format specifier in the string, it
+          will forge the log message. Try to use constant values for the format string.    
+          Details: https://sg.run/7Y5R                                                     
+                                                                                           
+          282┆ console.error(`Error compressing JS (${filename}) using esbuild`,
+               error);                                                          
+                                                    
+  [36m[22m[24m  src/static/js/AttributeManager.ts[0m
+    ❯❱ [1mjavascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          RegExp() called with a `attributeName` function argument, this might allow an    
+          attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your     
+          application as RegExP blocks the main thread. For this reason, it is recommended 
+          to use hardcoded regexes instead. If your regex is run on user-controlled input, 
+          consider performing input validation or use a regex checking/sanitization library
+          such as https://www.npmjs.com/package/recheck to verify that the regex does not  
+          appear vulnerable to ReDoS.                                                      
+          Details: https://sg.run/gr65                                                     
+                                                                                           
+          193┆ const withItRegex = new RegExp(`${withIt.replace(/\*/g,
+               '\\*')}(\\*|$)`);                                      
+                                             
+  [36m[22m[24m  src/static/js/Changeset.ts[0m
+    ❯❱ [1mjavascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          RegExp() called with a `attribPair` function argument, this might allow an       
+          attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your     
+          application as RegExP blocks the main thread. For this reason, it is recommended 
+          to use hardcoded regexes instead. If your regex is run on user-controlled input, 
+          consider performing input validation or use a regex checking/sanitization library
+          such as https://www.npmjs.com/package/recheck to verify that the regex does not  
+          appear vulnerable to ReDoS.                                                      
+          Details: https://sg.run/gr65                                                     
+                                                                                           
+          799┆ const re = new RegExp(`\\*${numToString(attribNum)}(?!\\w)`);
+            ⋮┆----------------------------------------
+    ❯❱ [1mjavascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          RegExp() called with a `pool` function argument, this might allow an attacker to 
+          cause a Regular Expression Denial-of-Service (ReDoS) within your application as  
+          RegExP blocks the main thread. For this reason, it is recommended to use         
+          hardcoded regexes instead. If your regex is run on user-controlled input,        
+          consider performing input validation or use a regex checking/sanitization library
+          such as https://www.npmjs.com/package/recheck to verify that the regex does not  
+          appear vulnerable to ReDoS.                                                      
+          Details: https://sg.run/gr65                                                     
+                                                                                           
+          799┆ const re = new RegExp(`\\*${numToString(attribNum)}(?!\\w)`);
+                                              
+  [36m[22m[24m  src/static/js/ace2_inner.ts[0m
+    ❯❱ [1mjavascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          RegExp() called with a `attributeName` function argument, this might allow an    
+          attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your     
+          application as RegExP blocks the main thread. For this reason, it is recommended 
+          to use hardcoded regexes instead. If your regex is run on user-controlled input, 
+          consider performing input validation or use a regex checking/sanitization library
+          such as https://www.npmjs.com/package/recheck to verify that the regex does not  
+          appear vulnerable to ReDoS.                                                      
+          Details: https://sg.run/gr65                                                     
+                                                                                           
+          1587┆ const withItRegex = new RegExp(`${withIt.replace(/\*/g,
+               '\\*')}(\\*|$)`);                                       
+            ⋮┆----------------------------------------
+          1646┆ const withItRegex = new RegExp(`${withIt.replace(/\*/g,
+               '\\*')}(\\*|$)`);                                       
+                                                          
+  [36m[22m[24m  src/static/js/pluginfw/LinkInstaller.ts[0m
+    ❯❱ [1mjavascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-[0m
+  [1m     traversal[0m                                                                                   
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected possible user input going into a `path.join` or `path.resolve` function.
+          This could possibly lead to a path traversal vulnerability,  where the attacker  
+          can access arbitrary files stored in the file system. Instead, be sure to        
+          sanitize or validate user input first.                                           
+          Details: https://sg.run/OPqk                                                     
+                                                                                           
+          102┆ readFileSync(path.join(pluginInstallPath, dependency, 'package.json'),
+               'utf-8'));                                                            
+            ⋮┆----------------------------------------
+          116┆ accessSync(path.join(pluginInstallPath, dependency), constants.F_OK)
+            ⋮┆----------------------------------------
+          117┆ rmSync(path.join(pluginInstallPath, dependency), {
+            ⋮┆----------------------------------------
+          129┆ accessSync(path.join(node_modules, plugin.name), constants.F_OK)
+            ⋮┆----------------------------------------
+          160┆ readFileSync(path.join(pluginInstallPath, dependency, 'package.json'),
+               'utf-8'));                                                            
+            ⋮┆----------------------------------------
+          203┆ readFileSync(path.join(pluginInstallPath, dependency, 'package.json'),
+               'utf-8'));                                                            
+            ⋮┆----------------------------------------
+          211┆ console.error(`Error reading package.json ${err} for         
+               ${path.join(pluginInstallPath, dependency, 'package.json')}`)
+            ⋮┆----------------------------------------
+          223┆ accessSync(path.join(node_modules, dependency), constants.F_OK)
+            ⋮┆----------------------------------------
+          228┆ symlinkSync(path.join(pluginInstallPath, dependency),
+               path.join(node_modules, newDependency), 'dir')       
+            ⋮┆----------------------------------------
+          228┆ symlinkSync(path.join(pluginInstallPath, dependency),
+               path.join(node_modules, newDependency), 'dir')       
+            ⋮┆----------------------------------------
+          230┆ symlinkSync(path.join(pluginInstallPath, dependency),
+               path.join(node_modules, dependency), 'dir')          
+            ⋮┆----------------------------------------
+          230┆ symlinkSync(path.join(pluginInstallPath, dependency),
+               path.join(node_modules, dependency), 'dir')          
+            ⋮┆----------------------------------------
+          241┆ accessSync(path.join(node_modules, dependency), constants.F_OK)
+            ⋮┆----------------------------------------
+          242┆ unlinkSync(path.join(node_modules, dependency))
+            ⋮┆----------------------------------------
+          253┆ accessSync(path.join(pluginInstallPath, plugin.name), constants.F_OK)
+                                                    
+  [36m[22m[24m  src/static/js/pluginfw/plugins.ts[0m
+    ❯❱ [1mjavascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-[0m
+  [1m     traversal[0m                                                                                   
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected possible user input going into a `path.join` or `path.resolve` function.
+          This could possibly lead to a path traversal vulnerability,  where the attacker  
+          can access arbitrary files stored in the file system. Instead, be sure to        
+          sanitize or validate user input first.                                           
+          Details: https://sg.run/OPqk                                                     
+                                                                                           
+          114┆ const fileName = path.join(packageDir, moduleName);
+            ⋮┆----------------------------------------
+          114┆ const fileName = path.join(packageDir, moduleName);
+            ⋮┆----------------------------------------
+          164┆ const pluginPath = path.resolve(packages[pluginName].path, 'ep.json');
+                                                   
+  [36m[22m[24m  src/static/js/pluginfw/shared.ts[0m
+    ❯❱ [1mjavascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-[0m
+  [1m     pollution-loop[0m                                                                        
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Possibility of prototype polluting function detected. By adding or modifying     
+          attributes of an object prototype, it is possible to create attributes that exist
+          on every object, or replace critical attributes with malicious ones. This can be 
+          problematic if the software depends on existence or non-existence of certain     
+          attributes, or uses pre-defined attributes of object prototype (such as          
+          hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the
+          object prototype, using an object without prototypes (via Object.create(null) ), 
+          blocking modifications of attributes that resolve to object prototype, using Map 
+          instead of object.                                                               
+          Details: https://sg.run/w1DB                                                     
+                                                                                           
+           38┆ fn = fn[name];
+                                                   
+  [36m[22m[24m  src/static/js/vendors/gritter.ts[0m
+     ❱ [1mjavascript.lang.security.audit.unsafe-formatstring.unsafe-formatstring[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected string concatenation with a non-literal variable in a util.format /     
+          console.log function. If an attacker injects a format specifier in the string, it
+          will forge the log message. Try to use constant values for the format string.    
+          Details: https://sg.run/7Y5R                                                     
+                                                                                           
+           48┆ console.error(err, params) :
+                                                   
+  [36m[22m[24m  src/static/js/vendors/html10n.ts[0m
+     ❱ [1mjavascript.lang.security.audit.unsafe-formatstring.unsafe-formatstring[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected string concatenation with a non-literal variable in a util.format /     
+          console.log function. If an attacker injects a format specifier in the string, it
+          will forge the log message. Try to use constant values for the format string.    
+          Details: https://sg.run/7Y5R                                                     
+                                                                                           
+          708┆ console.warn('Unexpected error: could not translate element content for
+               key '+str.id, node)                                                    
+                                                  
+  [36m[22m[24m  src/static/js/vendors/jquery.ts[0m
+    ❯❱ [1mjavascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          RegExp() called with a `className` function argument, this might allow an        
+          attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your     
+          application as RegExP blocks the main thread. For this reason, it is recommended 
+          to use hardcoded regexes instead. If your regex is run on user-controlled input, 
+          consider performing input validation or use a regex checking/sanitization library
+          such as https://www.npmjs.com/package/recheck to verify that the regex does not  
+          appear vulnerable to ReDoS.                                                      
+          Details: https://sg.run/gr65                                                     
+                                                                                           
+          1652┆ ( pattern = new RegExp( "(^|" + whitespace + ")" + className +
+          1653┆   "(" + whitespace + "|$)" ) ) &&
+   
+    ❯❱ [1mjavascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-[0m
+  [1m     pollution-loop[0m                                                                        
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Possibility of prototype polluting function detected. By adding or modifying     
+          attributes of an object prototype, it is possible to create attributes that exist
+          on every object, or replace critical attributes with malicious ones. This can be 
+          problematic if the software depends on existence or non-existence of certain     
+          attributes, or uses pre-defined attributes of object prototype (such as          
+          hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the
+          object prototype, using an object without prototypes (via Object.create(null) ), 
+          blocking modifications of attributes that resolve to object prototype, using Map 
+          instead of object.                                                               
+          Details: https://sg.run/w1DB                                                     
+                                                                                           
+          1730┆ while ( ( node = node[ dir ] ) ) {
+            ⋮┆----------------------------------------
+          2181┆ while ( ( elem = elem[ dir ] ) ) {
+            ⋮┆----------------------------------------
+          2196┆ while ( ( elem = elem[ dir ] ) ) {
+            ⋮┆----------------------------------------
+          2204┆ while ( ( elem = elem[ dir ] ) ) {
+            ⋮┆----------------------------------------
+          2209┆ elem = elem[ dir ] || elem;
+            ⋮┆----------------------------------------
+          2731┆ while ( ( elem = elem[ dir ] ) && elem.nodeType !== 9 ) {
+            ⋮┆----------------------------------------
+          3059┆ while ( ( cur = cur[ dir ] ) && cur.nodeType !== 1 ) {}
+                                                 
+  [36m[22m[24m  src/templates/export_html.html[0m
+    ❯❱ [1mjavascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected an explicit unescape in an EJS template, using '<%- ... %>' If external
+          data can reach these locations, your application is exposed to a cross-site     
+          scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need
+          escaping, ensure no external data can reach this location.                      
+          Details: https://sg.run/dKXQ                                                    
+                                                                                          
+            4┆ <title><%- padId %></title>
+            ⋮┆----------------------------------------
+           40┆ <%- extraCSS %>
+            ⋮┆----------------------------------------
+           44┆ <%- body %>
+                                           
+  [36m[22m[24m  src/templates/index.html[0m
+    ❯❱ [1mjavascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected an explicit unescape in an EJS template, using '<%- ... %>' If external
+          data can reach these locations, your application is exposed to a cross-site     
+          scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need
+          escaping, ensure no external data can reach this location.                      
+          Details: https://sg.run/dKXQ                                                    
+                                                                                          
+           11┆ <%- typeof socialMetaHtml !== 'undefined' ? socialMetaHtml : '' %>
+   
+    ❯❱ [1mjavascript.express.security.audit.xss.ejs.var-in-script-src.var-in-script-src[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected a template variable used as the 'src' in a script tag. Although template
+          variables are HTML escaped, HTML escaping does not always prevent malicious URLs 
+          from being injected and could results in a cross-site scripting (XSS)            
+          vulnerability. Prefer not to dynamically generate the 'src' attribute and use    
+          static URLs instead. If you must do this, carefully check URLs against an        
+          allowlist and be sure to URL-encode the result.                                  
+          Details: https://sg.run/ndxZ                                                     
+                                                                                           
+          246┆ <script src="<%=entrypoint%>"></script>
+            ⋮┆----------------------------------------
+          249┆ <script src="static/skins/<%=encodeURI(settings.skinName)%>/index.js?v=<
+               %=settings.randomVersionString%>"></script>                             
+                                                
+  [36m[22m[24m  src/templates/javascript.html[0m
+    ❯❱ [1mhtml.security.plaintext-http-link.plaintext-http-link[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if
+          possible.                                                                 
+          Details: https://sg.run/RA5q                                              
+                                                                                    
+           14┆ <td><a href="http://www.jclark.com/xml/copying.txt">Expat</a></td>
+            ⋮┆----------------------------------------
+           19┆ <td><a href="http://www.jclark.com/xml/copying.txt">Expat</a></td>
+            ⋮┆----------------------------------------
+           24┆ <td><a                                                       
+               href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0-
+               only</a></td>                                                
+            ⋮┆----------------------------------------
+           29┆ <td><a href="http://www.jclark.com/xml/copying.txt">Expat</a></td>
+            ⋮┆----------------------------------------
+           34┆ <td><a href="http://www.jclark.com/xml/copying.txt">Expat</a></td>
+            ⋮┆----------------------------------------
+           38┆ <td><a                                                       
+               href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0-
+               only</a></td>                                                
+            ⋮┆----------------------------------------
+           41┆ <td><a href="http://www.jclark.com/xml/copying.txt">Expat</a></td>
+            ⋮┆----------------------------------------
+           44┆ <td><a                                                       
+               href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0-
+               only</a></td>                                                
+            ⋮┆----------------------------------------
+           47┆ <td><a href="http://www.jclark.com/xml/copying.txt">Expat</a></td>
+                                         
+  [36m[22m[24m  src/templates/pad.html[0m
+    ❯❱ [1mjavascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected an explicit unescape in an EJS template, using '<%- ... %>' If external
+          data can reach these locations, your application is exposed to a cross-site     
+          scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need
+          escaping, ensure no external data can reach this location.                      
+          Details: https://sg.run/dKXQ                                                    
+                                                                                          
+           27┆ <%- typeof socialMetaHtml !== 'undefined' ? socialMetaHtml : '' %>
+            ⋮┆----------------------------------------
+          139┆ <%- toolbar.menu(settings.toolbar.left, isReadOnly, 'left', 'pad') %>
+            ⋮┆----------------------------------------
+          201┆ <%- toolbar.menu(settings.toolbar.right, isReadOnly, 'right', 'pad') %>
+   
+    ❯❱ [1mpython.django.security.django-no-csrf-token.django-no-csrf-token[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Manually-created forms in django templates should specify a csrf_token to prevent
+          CSRF attacks.                                                                    
+          Details: https://sg.run/N0Bp                                                     
+                                                                                           
+          449┆ <form id="importform" method="post" action="" target="importiframe"
+               enctype="multipart/form-data">                                     
+          450┆     <div class="importformdiv" id="importformfilediv">
+          451┆         <input type="file" name="file" size="10" id="importfileinput">
+          452┆         <div class="importmessage" id="importmessagefail"></div>
+          453┆     </div>
+          454┆     <div id="import"></div>
+          455┆     <div class="importmessage" id="importmessagesuccess"
+               data-l10n-id="pad.importExport.importSuccessful"></div> 
+          456┆     <div class="importformdiv" id="importformsubmitdiv">
+          457┆         <span class="nowrap">
+          458┆             <input type="submit" class="btn btn-primary" name="submit"
+               value="Import Now" disabled="disabled" id="importsubmitinput">        
+             [hid 4 additional lines, adjust with --max-lines-per-finding] 
+          565┆ <form id="reconnectform" method="post" action="<%= typeof proxyPath !== 
+               'undefined' ? proxyPath : '' %>/ep/pad/reconnect" accept-charset="UTF-8"
+               style="display: none;">                                                 
+          566┆     <input type="hidden" class="padId" name="padId">
+          567┆     <input type="hidden" class="diagnosticInfo" name="diagnosticInfo">
+          568┆     <input type="hidden" class="missedChanges" name="missedChanges">
+          569┆ </form>
+   
+    ❯❱ [1mjavascript.express.security.audit.xss.ejs.var-in-script-src.var-in-script-src[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected a template variable used as the 'src' in a script tag. Although template
+          variables are HTML escaped, HTML escaping does not always prevent malicious URLs 
+          from being injected and could results in a cross-site scripting (XSS)            
+          vulnerability. Prefer not to dynamically generate the 'src' attribute and use    
+          static URLs instead. If you must do this, carefully check URLs against an        
+          allowlist and be sure to URL-encode the result.                                  
+          Details: https://sg.run/ndxZ                                                     
+                                                                                           
+          706┆ <script src="<%=entrypoint%>"></script>
+            ⋮┆----------------------------------------
+          709┆ <script type="text/javascript" src="../static/skins/<%=encodeURI(setting
+               s.skinName)%>/pad.js?v=<%=settings.randomVersionString%>"></script>     
+   
+    ❯❱ [1mjavascript.express.security.audit.xss.ejs.var-in-script-tag.var-in-script-tag[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected a template variable used in a script tag. Although template variables   
+          are HTML escaped, HTML escaping does not always prevent cross-site scripting     
+          (XSS) attacks when used directly in JavaScript. If you need this data on the     
+          rendered page, consider placing it in the HTML portion (outside of a script tag).
+          Alternatively, use a JavaScript-specific encoder, such as the one available in   
+          OWASP ESAPI.                                                                     
+          Details: https://sg.run/Ek9L                                                     
+                                                                                           
+          709┆ <script type="text/javascript" src="../static/skins/<%=encodeURI(setting
+               s.skinName)%>/pad.js?v=<%=settings.randomVersionString%>"></script>     
+                                                
+  [36m[22m[24m  src/templates/timeslider.html[0m
+    ❯❱ [1mjavascript.express.security.audit.xss.ejs.explicit-unescape.template-explicit-unescape[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected an explicit unescape in an EJS template, using '<%- ... %>' If external
+          data can reach these locations, your application is exposed to a cross-site     
+          scripting (XSS) vulnerability. Use '<%= ... %>' to escape this data. If you need
+          escaping, ensure no external data can reach this location.                      
+          Details: https://sg.run/dKXQ                                                    
+                                                                                          
+           16┆ <%- typeof socialMetaHtml !== 'undefined' ? socialMetaHtml : '' %>
+            ⋮┆----------------------------------------
+          109┆ <%- toolbar.menu(settings.toolbar.timeslider, true, 'timeslider-right',
+               'timeslider') %>                                                       
+   
+    ❯❱ [1mpython.django.security.django-no-csrf-token.django-no-csrf-token[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Manually-created forms in django templates should specify a csrf_token to prevent
+          CSRF attacks.                                                                    
+          Details: https://sg.run/N0Bp                                                     
+                                                                                           
+          248┆ <form id="reconnectform" method="post" action="<%= typeof proxyPath !== 
+               'undefined' ? proxyPath : '' %>/ep/pad/reconnect" accept-charset="UTF-8"
+               style="display: none;">                                                 
+          249┆     <input type="hidden" class="padId" name="padId">
+          250┆     <input type="hidden" class="diagnosticInfo" name="diagnosticInfo">
+          251┆     <input type="hidden" class="missedChanges" name="missedChanges">
+          252┆ </form>
+   
+    ❯❱ [1mjavascript.express.security.audit.xss.ejs.var-in-script-src.var-in-script-src[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected a template variable used as the 'src' in a script tag. Although template
+          variables are HTML escaped, HTML escaping does not always prevent malicious URLs 
+          from being injected and could results in a cross-site scripting (XSS)            
+          vulnerability. Prefer not to dynamically generate the 'src' attribute and use    
+          static URLs instead. If you must do this, carefully check URLs against an        
+          allowlist and be sure to URL-encode the result.                                  
+          Details: https://sg.run/ndxZ                                                     
+                                                                                           
+          303┆ <script type="text/javascript" src="../../static/skins/<%=encodeURI(sett
+               ings.skinName)%>/timeslider.js?v=<%=settings.randomVersionString%>"></sc
+               ript>                                                                   
+   
+    ❯❱ [1mjavascript.express.security.audit.xss.ejs.var-in-script-tag.var-in-script-tag[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected a template variable used in a script tag. Although template variables   
+          are HTML escaped, HTML escaping does not always prevent cross-site scripting     
+          (XSS) attacks when used directly in JavaScript. If you need this data on the     
+          rendered page, consider placing it in the HTML portion (outside of a script tag).
+          Alternatively, use a JavaScript-specific encoder, such as the one available in   
+          OWASP ESAPI.                                                                     
+          Details: https://sg.run/Ek9L                                                     
+                                                                                           
+          303┆ <script type="text/javascript" src="../../static/skins/<%=encodeURI(sett
+               ings.skinName)%>/timeslider.js?v=<%=settings.randomVersionString%>"></sc
+               ript>                                                                   
+   
+    ❯❱ [1mjavascript.express.security.audit.xss.ejs.var-in-script-src.var-in-script-src[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Detected a template variable used as the 'src' in a script tag. Although template
+          variables are HTML escaped, HTML escaping does not always prevent malicious URLs 
+          from being injected and could results in a cross-site scripting (XSS)            
+          vulnerability. Prefer not to dynamically generate the 'src' attribute and use    
+          static URLs instead. If you must do this, carefully check URLs against an        
+          allowlist and be sure to URL-encode the result.                                  
+          Details: https://sg.run/ndxZ                                                     
+                                                                                           
+          306┆ <script src="<%=entrypoint%>"></script>
+                                  
+  [36m[22m[24m  ui/consent.html[0m
+    ❯❱ [1mpython.django.security.django-no-csrf-token.django-no-csrf-token[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Manually-created forms in django templates should specify a csrf_token to prevent
+          CSRF attacks.                                                                    
+          Details: https://sg.run/N0Bp                                                     
+                                                                                           
+           14┆ <form class="login-inner-box input-control"  method="post">
+           15┆     <input type="hidden" name="prompt" value="consent"/>
+           16┆     <input type="submit" value="Login" class="login-button"/>
+           17┆     <div id="error"></div>
+           18┆ </form>
+                              
+  [36m[22m[24m  ui/pad.html[0m
+    ❯❱ [1mpython.django.security.django-no-csrf-token.django-no-csrf-token[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          Manually-created forms in django templates should specify a csrf_token to prevent
+          CSRF attacks.                                                                    
+          Details: https://sg.run/N0Bp                                                     
+                                                                                           
+          405┆ <form id="importform" method="post" action="" target="importiframe"
+               enctype="multipart/form-data">                                     
+          406┆   <div class="importformdiv" id="importformfilediv">
+          407┆     <input type="file" name="file" size="10" id="importfileinput">
+          408┆     <div class="importmessage" id="importmessagefail"></div>
+          409┆   </div>
+          410┆   <div id="import"></div>
+          411┆   <div class="importmessage" id="importmessagesuccess" 
+               data-l10n-id="pad.importExport.importSuccessful"></div>
+          412┆   <div class="importformdiv" id="importformsubmitdiv">
+          413┆                 <span class="nowrap">
+          414┆                     <input type="submit" class="btn btn-primary"
+               name="submit" value="Import Now" disabled="disabled"            
+               id="importsubmitinput">                                         
+             [hid 4 additional lines, adjust with --max-lines-per-finding] 
+          521┆ <form id="reconnectform" method="post" action="/ep/pad/reconnect"
+               accept-charset="UTF-8" style="display: none;">                   
+          522┆   <input type="hidden" class="padId" name="padId">
+          523┆   <input type="hidden" class="diagnosticInfo" name="diagnosticInfo">
+          524┆   <input type="hidden" class="missedChanges" name="missedChanges">
+          525┆ </form>

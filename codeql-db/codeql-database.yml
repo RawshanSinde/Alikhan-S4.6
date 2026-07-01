@@ -1,0 +1,14 @@
+---
+sourceLocationPrefix: /Users/rawshansinde/claude-test/etherpad-replication-attemptA3-S4.6
+baselineLinesOfCode: 72859
+unicodeNewlines: true
+columnKind: utf16
+primaryLanguage: javascript
+creationMetadata:
+  sha: 826b0f3ae09f3177179d104c6db37fe49764acde
+  cliVersion: 2.25.6
+  creationTime: 2026-07-01T00:33:34.502933Z
+buildMode: none
+finalised: true
+overlayDatabase: false
+overlayBaseDatabase: false

@@ -2,6 +2,8 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 
+const backendUrl = 'http://localhost:9002'
+
 export default defineConfig({
   base: '/views/',
     build: {
@@ -17,24 +19,24 @@ export default defineConfig({
   server:{
       proxy:{
         '/static':{
-            target: 'http://localhost:9001',
+            target: backendUrl,
             changeOrigin: true,
             secure: false,
         },
         '/views/manifest.json':{
-            target: 'http://localhost:9001',
+            target: backendUrl,
             changeOrigin: true,
             secure: false,
           rewrite: (path) => path.replace(/^\/views/, ''),
         },
         '/locales.json':{
-            target: 'http://localhost:9001',
+            target: backendUrl,
             changeOrigin: true,
             secure: false,
           rewrite: (path) => path.replace(/^\/views/, ''),
         },
         '/locales':{
-            target: 'http://localhost:9001',
+            target: backendUrl,
             changeOrigin: true,
             secure: false,
           rewrite: (path) => path.replace(/^\/views/, ''),

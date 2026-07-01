@@ -12,6 +12,7 @@ const settingsTemplate = readFileSync(
   resolve(__dirname, '..', 'settings.json.template'),
   'utf8',
 )
+const backendUrl = 'http://localhost:9002'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -33,12 +34,12 @@ export default defineConfig({
   server: {
     proxy: {
       '/socket.io/*': {
-        target: 'http://localhost:9001',
+        target: backendUrl,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
       '/admin-auth/': {
-        target: 'http://localhost:9001',
+        target: backendUrl,
         changeOrigin: true,
       },
     },
