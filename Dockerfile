@@ -14,7 +14,7 @@ ARG BUILD_ENV=git
 # the build stage below — see ether/etherpad#7911.
 ARG PnpmVersion=11.0.6
 
-FROM node:24-alpine AS adminbuild
+FROM node:25-alpine AS adminbuild
 # Install pnpm directly via npm (rather than via corepack) so the same
 # image recipe keeps working on Node 25+, where corepack has been
 # dropped from the distribution. The node:24-alpine image also bundles
@@ -30,7 +30,7 @@ RUN pnpm install
 RUN pnpm run build:ui
 
 
-FROM node:24-alpine AS build
+FROM node:25-alpine AS build
 LABEL maintainer="Etherpad team, https://github.com/ether/etherpad"
 
 # The image's pnpm intentionally lags the "packageManager" pin (see the ARG
