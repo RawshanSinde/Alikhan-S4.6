@@ -166,7 +166,7 @@ importers:
         version: 4.22.4
       ueberdb2:
         specifier: 6.1.14
-        version: 6.1.14(@elastic/elasticsearch@9.4.2)(async@3.2.6)(cassandra-driver@4.8.0)(dirty-ts@1.1.8)(mongodb@7.3.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.5(@types/node@26.0.0))(nano@11.0.5)(pg@8.22.0)(redis@6.0.0(@opentelemetry/api@1.9.1))(rethinkdb@2.4.2)(rusty-store-kv@1.3.1)(surrealdb@2.0.3(tslib@2.8.1)(typescript@6.0.3))
+        version: 6.1.14(@elastic/elasticsearch@9.5.1)(async@3.2.6)(cassandra-driver@4.8.0)(dirty-ts@1.1.8)(mongodb@7.3.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.5(@types/node@26.0.0))(nano@11.0.5)(pg@8.22.0)(redis@6.0.0(@opentelemetry/api@1.9.1))(rethinkdb@2.4.2)(rusty-store-kv@1.3.1)(surrealdb@2.0.3(tslib@2.8.1)(typescript@6.0.3))
     devDependencies:
       '@types/node':
         specifier: ^26.0.0
@@ -194,8 +194,8 @@ importers:
   src:
     dependencies:
       '@elastic/elasticsearch':
-        specifier: ^9.4.2
-        version: 9.4.2
+        specifier: ^9.5.1
+        version: 9.5.1
       async:
         specifier: ^3.2.6
         version: 3.2.6
@@ -360,7 +360,7 @@ importers:
         version: 4.22.4
       ueberdb2:
         specifier: 6.1.14
-        version: 6.1.14(@elastic/elasticsearch@9.4.2)(async@3.2.6)(cassandra-driver@4.8.0)(dirty-ts@1.1.8)(mongodb@7.3.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.5(@types/node@26.0.0))(nano@11.0.5)(pg@8.22.0)(redis@6.0.0(@opentelemetry/api@1.9.1))(rethinkdb@2.4.2)(rusty-store-kv@1.3.1)(surrealdb@2.0.3(tslib@2.8.1)(typescript@6.0.3))
+        version: 6.1.14(@elastic/elasticsearch@9.5.1)(async@3.2.6)(cassandra-driver@4.8.0)(dirty-ts@1.1.8)(mongodb@7.3.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.5(@types/node@26.0.0))(nano@11.0.5)(pg@8.22.0)(redis@6.0.0(@opentelemetry/api@1.9.1))(rethinkdb@2.4.2)(rusty-store-kv@1.3.1)(surrealdb@2.0.3(tslib@2.8.1)(typescript@6.0.3))
       underscore:
         specifier: 1.13.8
         version: 1.13.8
@@ -751,17 +751,17 @@ packages:
   '@docsearch/sidepanel-js@4.6.0':
     resolution: {integrity: sha512-lFT5KLwlzUmpoGArCScNoK41l9a22JYsEPwBzMrz+/ILVR5Ax87UphCuiyDFQWEvEmbwzn/kJx5W/O5BUlN1Rw==}
 
-  '@elastic/elasticsearch@9.4.2':
-    resolution: {integrity: sha512-H9myMlLUeotkZhZ4ppinoMGDFxmW3lY8/s+4TIk1vFHyCvWU1Ej4T7azX5buCzemyFApgN0ywnEuvOtpel2VZg==}
-    engines: {node: '>=20'}
+  '@elastic/elasticsearch@9.5.1':
+    resolution: {integrity: sha512-2ZZqCmgGPjSYn+OphFRYm9g46KVINA0i8fRmlPHJC60RvJeFB6NSHO0nKKOOYhm3WRXyGkLu1xkdXe724fnmnA==}
+    engines: {node: '>=22'}
     peerDependencies:
       apache-arrow: 18.x - 21.x
     peerDependenciesMeta:
       apache-arrow:
         optional: true
 
-  '@elastic/transport@9.3.6':
-    resolution: {integrity: sha512-1r0kXXOkKPhmHycpdZTzRlr2d6l0m16b+ug1iJDMS84Ml0t6w7m26BKjFYbZ2Ng7kX50wyqgUTFqxln1ygvMUw==}
+  '@elastic/transport@9.4.0':
+    resolution: {integrity: sha512-/lE1rEPoXWjbQD1pAFyI/zZuMU1XdsxYgfZIAbQGgDabhinKYpZbQh6Qc/dYS6tEPxHOqlJ/WSQvSHZap4+I+w==}
     engines: {node: '>=20'}
 
   '@emnapi/core@1.10.0':
@@ -1132,14 +1132,14 @@ packages:
     resolution: {integrity: sha512-gLyJlPHPZYdAk1JENA9LeHejZe1Ti77/pTeFm/nMXmQH/HFZlcS/O2XJB+L8fkbrNSqhdtlvjBVjxwUYanNH5Q==}
     engines: {node: '>=8.0.0'}
 
-  '@opentelemetry/core@2.8.0':
-    resolution: {integrity: sha512-hd1Lfh8p545nNz+jq1Ejfz+Mn1hyLuxYn1YzTfFNrxr8urEWMNQLPf1Th8kjOH+HxwawCrtgBp8JpBUR4ZSgww==}
+  '@opentelemetry/core@2.11.0':
+    resolution: {integrity: sha512-7YP44XH0tV6+Mb54x2YGf84i7yi+31MBZlE8JwvozkxyTvXbSp10X7cI7YE49ChJ3shMJoBmCJF3+1QFBJctGA==}
     engines: {node: ^18.19.0 || >=20.6.0}
     peerDependencies:
       '@opentelemetry/api': '>=1.0.0 <1.10.0'
 
-  '@opentelemetry/semantic-conventions@1.41.1':
-    resolution: {integrity: sha512-/UhIkaZgPutTFmQ7RnIJGgDXZmtEJ7Dvi86xNTFWcnRxVRNk/aotsqDJYeEvDP+FSMB2SdW+pQzNMcWP0rwuNA==}
+  '@opentelemetry/semantic-conventions@1.43.0':
+    resolution: {integrity: sha512-eSYWTm620tTk45EKSedaUL8MFYI8hW164hIXsgIHyxu3VobUB3fFCu5t0hQby6OoWRPsG1KkKUG2M5UadiLiVg==}
     engines: {node: '>=14'}
 
   '@oxc-minify/binding-android-arm-eabi@0.137.0':
@@ -2308,6 +2308,7 @@ packages:
   '@xmldom/xmldom@0.8.13':
     resolution: {integrity: sha512-KRYzxepc14G/CEpEGc3Yn+JKaAeT63smlDr+vjB8jRfgTBBI9wRj/nkQEO+ucV8p8I9bfKLWp37uHgFrbntPvw==}
     engines: {node: '>=10.0.0'}
+    deprecated: this version has critical issues, please update to the latest version
 
   abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -4625,6 +4626,7 @@ packages:
   prom-client@15.1.3:
     resolution: {integrity: sha512-6ZiOBfCywsD4k1BN9IX0uZhF+tJkV8q8llP64G5Hajs4JOeVLPCwpPVcpXy3BwYiUGgyJzsJJQeOIv7+hDSq8g==}
     engines: {node: ^16 || ^18 || >=20}
+    deprecated: prom-client has been replaced by @prometheus-io/client
 
   promise@1.3.0:
     resolution: {integrity: sha512-R9WrbTF3EPkVtWjp7B7umQGVndpsi+rsDAfrR4xAALQpFLa/+2OriecLhawxzvii2gd9+DZFwROWDuUUaqS5yA==}
@@ -5445,6 +5447,10 @@ packages:
     resolution: {integrity: sha512-uZsKNuzQxDMUY6M3pIMvy5tvlGmtq8XJ2oLAkfRKGNu+1VQAIvLy2xIVG5ATZl5wDXl/tddByAWCizRbOme+TA==}
     engines: {node: '>=20.18.1'}
 
+  undici@7.29.0:
+    resolution: {integrity: sha512-IDxfleLmmbSskfWSUATiN1nfn2rDuvnMOqb5CWR92iIfojA0Ud+ulOAAEQ57LPr9rWmsreUyf5lwyao+7GNNVw==}
+    engines: {node: '>=20.18.1'}
+
   undici@8.5.0:
     resolution: {integrity: sha512-xamtWoB1EshgjpmlXd7GGm2VfdDtw1+rD8uhry8pSNW3If6S8E0m2T2+orSKeZXEn/aPJMviCpDBA65WJt8zhg==}
     engines: {node: '>=22.19.0'}
@@ -6198,23 +6204,23 @@ snapshots:
 
   '@docsearch/sidepanel-js@4.6.0': {}
 
-  '@elastic/elasticsearch@9.4.2':
+  '@elastic/elasticsearch@9.5.1':
     dependencies:
-      '@elastic/transport': 9.3.6
+      '@elastic/transport': 9.4.0
       tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
-  '@elastic/transport@9.3.6':
+  '@elastic/transport@9.4.0':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 2.8.0(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 2.11.0(@opentelemetry/api@1.9.1)
       debug: 4.4.3(supports-color@8.1.1)
       hpagent: 1.2.0
       ms: 2.1.3
       secure-json-parse: 4.1.0
       tslib: 2.8.1
-      undici: 7.27.2
+      undici: 7.29.0
     transitivePeerDependencies:
       - supports-color
 
@@ -6509,12 +6515,12 @@ snapshots:
 
   '@opentelemetry/api@1.9.1': {}
 
-  '@opentelemetry/core@2.8.0(@opentelemetry/api@1.9.1)':
+  '@opentelemetry/core@2.11.0(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/semantic-conventions': 1.41.1
+      '@opentelemetry/semantic-conventions': 1.43.0
 
-  '@opentelemetry/semantic-conventions@1.41.1': {}
+  '@opentelemetry/semantic-conventions@1.43.0': {}
 
   '@oxc-minify/binding-android-arm-eabi@0.137.0':
     optional: true
@@ -11054,9 +11060,9 @@ snapshots:
 
   typescript@6.0.3: {}
 
-  ueberdb2@6.1.14(@elastic/elasticsearch@9.4.2)(async@3.2.6)(cassandra-driver@4.8.0)(dirty-ts@1.1.8)(mongodb@7.3.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.5(@types/node@26.0.0))(nano@11.0.5)(pg@8.22.0)(redis@6.0.0(@opentelemetry/api@1.9.1))(rethinkdb@2.4.2)(rusty-store-kv@1.3.1)(surrealdb@2.0.3(tslib@2.8.1)(typescript@6.0.3)):
+  ueberdb2@6.1.14(@elastic/elasticsearch@9.5.1)(async@3.2.6)(cassandra-driver@4.8.0)(dirty-ts@1.1.8)(mongodb@7.3.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.5(@types/node@26.0.0))(nano@11.0.5)(pg@8.22.0)(redis@6.0.0(@opentelemetry/api@1.9.1))(rethinkdb@2.4.2)(rusty-store-kv@1.3.1)(surrealdb@2.0.3(tslib@2.8.1)(typescript@6.0.3)):
     optionalDependencies:
-      '@elastic/elasticsearch': 9.4.2
+      '@elastic/elasticsearch': 9.5.1
       async: 3.2.6
       cassandra-driver: 4.8.0
       dirty-ts: 1.1.8
@@ -11090,6 +11096,8 @@ snapshots:
   undici-types@8.3.0: {}
 
   undici@7.27.2: {}
+
+  undici@7.29.0: {}
 
   undici@8.5.0: {}
 
