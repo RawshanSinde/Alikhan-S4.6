@@ -302,8 +302,8 @@ importers:
         specifier: 9.8.5
         version: 9.8.5
       openapi-backend:
-        specifier: ^5.17.0
-        version: 5.17.0
+        specifier: ^5.21.1
+        version: 5.21.1(@types/json-schema@7.0.15)
       pdfkit:
         specifier: ^0.19.1
         version: 0.19.1
@@ -508,9 +508,11 @@ packages:
     resolution: {integrity: sha512-rEoeK/qBZCLzqt9a3Q3Dnb5TUyXnZlxVaWr9ZXBV65Ppzcz59dx3Ik5YUxtni+36CtZgJdhQaYkLgHBdqjxjoA==}
     engines: {node: '>=7.0.0'}
 
-  '@apidevtools/json-schema-ref-parser@11.9.3':
-    resolution: {integrity: sha512-60vepv88RwcJtSHrD6MjIL6Ta3SOYbgfnkHb+ppAVK+o9mXprRtulx7VlRl3lN3bbvysAfCS7WMVfhUYemB0IQ==}
-    engines: {node: '>= 16'}
+  '@apidevtools/json-schema-ref-parser@16.0.2':
+    resolution: {integrity: sha512-oCwWUyRdMtt/hnp6ONPudFZzF7tSqiHy46lLx5VsnsLTacs8TSU558VPAiOueFJ8WddCH30PINWDA8ByxhGHmQ==}
+    engines: {node: '>=22.19.0'}
+    peerDependencies:
+      '@types/json-schema': ^7.0.15
 
   '@asamuzakjp/css-color@5.1.11':
     resolution: {integrity: sha512-KVw6qIiCTUQhByfTd78h2yD1/00waTmm9uy/R7Ck/ctUyAPj+AEDLkQIdJW0T8+qGgj3j5bpNKK7Q3G+LedJWg==}
@@ -1028,9 +1030,6 @@ packages:
 
   '@js-joda/core@5.7.0':
     resolution: {integrity: sha512-WBu4ULVVxySLLzK1Ppq+OdfP+adRS4ntmDQT915rzDJ++i95gc2jZkM5B6LWEAwN3lGXpfie3yPABozdD3K3Vg==}
-
-  '@jsdevtools/ono@7.1.3':
-    resolution: {integrity: sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg==}
 
   '@koa/cors@5.0.0':
     resolution: {integrity: sha512-x/iUDjcS90W69PryLDIMgFyV21YLTnG9zOpPXS7Bkt2b8AsY3zZsIpOLBkYr9fBcF3HbkKaER5hOBZLfpLgYNw==}
@@ -2308,6 +2307,7 @@ packages:
   '@xmldom/xmldom@0.8.13':
     resolution: {integrity: sha512-KRYzxepc14G/CEpEGc3Yn+JKaAeT63smlDr+vjB8jRfgTBBI9wRj/nkQEO+ucV8p8I9bfKLWp37uHgFrbntPvw==}
     engines: {node: '>=10.0.0'}
+    deprecated: this version has critical issues, please update to the latest version
 
   abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -2837,8 +2837,8 @@ packages:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
     engines: {node: '>=6'}
 
-  dereference-json-schema@0.2.2:
-    resolution: {integrity: sha512-w8dUsJyrzH4Zsj8W/tKcjLsmcTKXfdNf+n3BBm1SAfnqpaCodgEUWqQGJ+pNb9NOqPwYMGvUnZZ8nQfeFjJlbQ==}
+  dereference-json-schema@0.2.3:
+    resolution: {integrity: sha512-CBVoEuf2tKhqnUhoKjvX4wo5NVxDSHxInqwExQfUNEK67aX+LPC27Vg+6CApi+KRebABJZAWhHBVoNpKfhMssg==}
 
   destroy@1.2.0:
     resolution: {integrity: sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==}
@@ -3276,8 +3276,8 @@ packages:
   fast-safe-stringify@2.1.1:
     resolution: {integrity: sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==}
 
-  fast-uri@3.1.2:
-    resolution: {integrity: sha512-rVjf7ArG3LTk+FS6Yw81V1DLuZl1bRbNrev6Tmd/9RaroeeRRJhAt7jg/6YFxbvAQXUCavSoZhPPj6oOx+5KjQ==}
+  fast-uri@3.1.8:
+    resolution: {integrity: sha512-GZMtZUTNRpOVIECoXwLNZS5xUGE+mVNbTB8h/7Rwh2TFWcBQiPzTgyZi05BF9UMZKkLJv8XBRJTlU7zg8+ZfMg==}
 
   fastq@1.20.1:
     resolution: {integrity: sha512-GGToxJ/w1x32s/D2EKND7kTil4n8OVk/9mycTc4VDza13lOvpUZTGX3mFSCtV9ksdGBVzvsyAVLM6mHFThxXxw==}
@@ -3842,6 +3842,10 @@ packages:
     resolution: {integrity: sha512-ePWsvanv0DWuDRsW8dnt+R4jQ31SCRCQ7hhNcPXZPsoBZiemuZNYGf7adZdqX2D86j6rvKp3RpCxVTSb8WQlOw==}
     hasBin: true
 
+  js-yaml@5.4.2:
+    resolution: {integrity: sha512-m+aqu+LwO1O6sIopafj8HUVl5aawITwZQe/yHpMCKjaWBaA/d07B/QdMb3529REftiU+RMMHL3Vlsw3hON7vWg==}
+    hasBin: true
+
   jsdom@29.1.1:
     resolution: {integrity: sha512-ECi4Fi2f7BdJtUKTflYRTiaMxIB0O6zfR1fX0GXpUrf6flp8QIYn1UT20YQqdSOfk2dfkCwS8LAFoJDEppNK5Q==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24.0.0}
@@ -4218,8 +4222,8 @@ packages:
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     hasBin: true
 
-  mock-json-schema@1.1.2:
-    resolution: {integrity: sha512-3IyduYlhfzPy+nFN8wxUjloUi1hM7l8lN5LITuauUNMQltynJIOfLf/DADwTAp2d6kvSBtWojly1EuxX5B0WkA==}
+  mock-json-schema@1.1.3:
+    resolution: {integrity: sha512-8tBBFyfXE2BVsyOwfmuPPlYRPmDyMAZtPna2MwCZDjcyb6rVH5Xi0Bhy2fr3eQutXl3BQoi1OoEr9835UeD3UQ==}
 
   mongodb-connection-string-url@7.0.1:
     resolution: {integrity: sha512-h0AZ9A7IDVwwHyMxmdMXKy+9oNlF0zFoahHiX3vQ8e3KFcSP3VmsmfvtRSuLPxmyv2vjIDxqty8smTgie/SNRQ==}
@@ -4405,8 +4409,8 @@ packages:
     resolution: {integrity: sha512-YgBpdJHPyQ2UE5x+hlSXcnejzAvD0b22U2OuAP+8OnlJT+PjWPxtgmGqKKc+RgTM63U9gN0YzrYc71R2WT/hTA==}
     engines: {node: '>=18'}
 
-  openapi-backend@5.17.0:
-    resolution: {integrity: sha512-wyimPBoz/Gx+pqh4QwvMQRIJiZQHZkLdiyFXwfjiLwS5Jhbm7gCI+T0WTXmx7HXAYXL5Cr+016dR3CV3T/dPmQ==}
+  openapi-backend@5.21.1:
+    resolution: {integrity: sha512-re1ZK97mnsp4jeFfQHUR9rB3S0Gl8AmURdcpnHSLNqHw3O0QMrLQ0j+iG1j609qvOjnvHdcbtXKDRD/5ziwl9A==}
     engines: {node: '>=20.0.0'}
 
   openapi-fetch@0.17.0:
@@ -4625,6 +4629,7 @@ packages:
   prom-client@15.1.3:
     resolution: {integrity: sha512-6ZiOBfCywsD4k1BN9IX0uZhF+tJkV8q8llP64G5Hajs4JOeVLPCwpPVcpXy3BwYiUGgyJzsJJQeOIv7+hDSq8g==}
     engines: {node: ^16 || ^18 || >=20}
+    deprecated: prom-client has been replaced by @prometheus-io/client
 
   promise@1.3.0:
     resolution: {integrity: sha512-R9WrbTF3EPkVtWjp7B7umQGVndpsi+rsDAfrR4xAALQpFLa/+2OriecLhawxzvii2gd9+DZFwROWDuUUaqS5yA==}
@@ -4652,6 +4657,10 @@ packages:
 
   qs@6.15.2:
     resolution: {integrity: sha512-Rzq0KEyX/w/tEybncDgdkZrJgVUsUMk3xjh3t5bv3S1HTAtg+uOYt72+ZfwiQwKdysThkTBdL/rTi6HDmX9Ddw==}
+    engines: {node: '>=0.6'}
+
+  qs@6.16.0:
+    resolution: {integrity: sha512-h6fhOIaRrID2CbEY2fqs+7t+UXZo+MLAnU5gRIq85uFtdiUPCdsApMlHhXogKVM4HM2DVbIjGNTTYH2OcmP1vA==}
     engines: {node: '>=0.6'}
 
   queue-microtask@1.2.3:
@@ -5039,6 +5048,10 @@ packages:
 
   side-channel@1.1.0:
     resolution: {integrity: sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==}
+    engines: {node: '>= 0.4'}
+
+  side-channel@1.1.1:
+    resolution: {integrity: sha512-6x6dK6zJdpTzF4sQeNYxwtvBzf6Eg4GtlesS94HOvTudUeyK2WXAaIfmDgsyslYrRBeFIlsi54AYsFGUuhmvrQ==}
     engines: {node: '>= 0.4'}
 
   siginfo@2.0.0:
@@ -5444,6 +5457,10 @@ packages:
   undici@7.27.2:
     resolution: {integrity: sha512-uZsKNuzQxDMUY6M3pIMvy5tvlGmtq8XJ2oLAkfRKGNu+1VQAIvLy2xIVG5ATZl5wDXl/tddByAWCizRbOme+TA==}
     engines: {node: '>=20.18.1'}
+
+  undici@8.10.2:
+    resolution: {integrity: sha512-/y4/bH9YNU5hi9NIrpOuvGXFcxrj3CMrV+/AYpowAYTpHn8gX/XPFjNy766FPoYY0miQhdW977JFWKGNhBdwyQ==}
+    engines: {node: '>=22.19.0'}
 
   undici@8.5.0:
     resolution: {integrity: sha512-xamtWoB1EshgjpmlXd7GGm2VfdDtw1+rD8uhry8pSNW3If6S8E0m2T2+orSKeZXEn/aPJMviCpDBA65WJt8zhg==}
@@ -5865,11 +5882,11 @@ snapshots:
       chunk-array: 1.0.2
       enforce-range: 1.0.0
 
-  '@apidevtools/json-schema-ref-parser@11.9.3':
+  '@apidevtools/json-schema-ref-parser@16.0.2(@types/json-schema@7.0.15)':
     dependencies:
-      '@jsdevtools/ono': 7.1.3
       '@types/json-schema': 7.0.15
-      js-yaml: 4.2.0
+      js-yaml: 5.4.2
+      undici: 8.10.2
 
   '@asamuzakjp/css-color@5.1.11':
     dependencies:
@@ -6410,8 +6427,6 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.5
 
   '@js-joda/core@5.7.0': {}
-
-  '@jsdevtools/ono@7.1.3': {}
 
   '@koa/cors@5.0.0':
     dependencies:
@@ -7646,7 +7661,7 @@ snapshots:
   ajv@8.20.0:
     dependencies:
       fast-deep-equal: 3.1.3
-      fast-uri: 3.1.2
+      fast-uri: 3.1.8
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
@@ -8090,7 +8105,7 @@ snapshots:
 
   dequal@2.0.3: {}
 
-  dereference-json-schema@0.2.2: {}
+  dereference-json-schema@0.2.3: {}
 
   destroy@1.2.0: {}
 
@@ -8705,7 +8720,7 @@ snapshots:
 
   fast-safe-stringify@2.1.1: {}
 
-  fast-uri@3.1.2: {}
+  fast-uri@3.1.8: {}
 
   fastq@1.20.1:
     dependencies:
@@ -9173,7 +9188,7 @@ snapshots:
     dependencies:
       es-errors: 1.3.0
       hasown: 2.0.3
-      side-channel: 1.1.0
+      side-channel: 1.1.1
 
   ip-address@10.2.0: {}
 
@@ -9340,6 +9355,10 @@ snapshots:
   js-tokens@4.0.0: {}
 
   js-yaml@4.2.0:
+    dependencies:
+      argparse: 2.0.1
+
+  js-yaml@5.4.2:
     dependencies:
       argparse: 2.0.1
 
@@ -9763,7 +9782,7 @@ snapshots:
       yargs-parser: 21.1.1
       yargs-unparser: 2.0.0
 
-  mock-json-schema@1.1.2:
+  mock-json-schema@1.1.3:
     dependencies:
       lodash: 4.18.1
 
@@ -9940,18 +9959,20 @@ snapshots:
       is-inside-container: 1.0.0
       wsl-utils: 0.1.0
 
-  openapi-backend@5.17.0:
+  openapi-backend@5.21.1(@types/json-schema@7.0.15):
     dependencies:
-      '@apidevtools/json-schema-ref-parser': 11.9.3
+      '@apidevtools/json-schema-ref-parser': 16.0.2(@types/json-schema@7.0.15)
       ajv: 8.20.0
       bath-es5: 3.0.3
       cookie: 1.1.1
-      dereference-json-schema: 0.2.2
+      dereference-json-schema: 0.2.3
       lodash: 4.18.1
-      mock-json-schema: 1.1.2
+      mock-json-schema: 1.1.3
       openapi-schema-validator: 12.1.3
       openapi-types: 12.1.3
-      qs: 6.15.2
+      qs: 6.16.0
+    transitivePeerDependencies:
+      - '@types/json-schema'
 
   openapi-fetch@0.17.0:
     dependencies:
@@ -10225,6 +10246,11 @@ snapshots:
   qs@6.15.2:
     dependencies:
       side-channel: 1.1.0
+
+  qs@6.16.0:
+    dependencies:
+      es-define-property: 1.0.1
+      side-channel: 1.1.1
 
   queue-microtask@1.2.3: {}
 
@@ -10676,6 +10702,14 @@ snapshots:
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
 
+  side-channel@1.1.1:
+    dependencies:
+      es-errors: 1.3.0
+      object-inspect: 1.13.4
+      side-channel-list: 1.0.1
+      side-channel-map: 1.0.1
+      side-channel-weakmap: 1.0.2
+
   siginfo@2.0.0: {}
 
   signal-exit@3.0.7: {}
@@ -11090,6 +11124,8 @@ snapshots:
   undici-types@8.3.0: {}
 
   undici@7.27.2: {}
+
+  undici@8.10.2: {}
 
   undici@8.5.0: {}
 
