@@ -81,7 +81,7 @@
     "semver": "^7.8.5",
     "socket.io": "^4.8.3",
     "socket.io-client": "^4.8.3",
-    "superagent": "10.3.0",
+    "superagent": "10.4.0",
     "surrealdb": "^2.0.3",
     "tinycon": "0.6.8",
     "tsx": "4.22.4",
